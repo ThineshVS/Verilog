@@ -1,5 +1,5 @@
 module tflipflop(input t, input clk, input rst, output reg q, output reg qbar);
-  //srFlipFlop get inputs {s,r}, reset,clk Output q and q'
+  //srFlipFlop get inputs {t}, reset,clk Output q and q'
   always@(posedge clk)
   //Positive edge triggered flipflop
     if(!rst) q <= 0;
