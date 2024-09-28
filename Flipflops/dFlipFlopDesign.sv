@@ -1,4 +1,4 @@
-module tflipflop(input d, input clk, input rst, output reg q, output reg qbar);
+module dflipflop(input d, input clk, input rst, output reg q, output reg qbar);
   //dFlipFlop get inputs {d}, reset,clk Output q and q'
   always@(posedge clk)
   //Positive edge triggered flipflop
