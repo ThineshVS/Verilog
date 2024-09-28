@@ -2,7 +2,7 @@ module testb();
   reg clk, rst;
   reg d;
   wire q,qbar;
-//dFlipFlop get inputs t, reset,clk Output q and q'
+//dFlipFlop get inputs d, reset,clk Output q and q'
   task valueparse(bit ip);
     //we are creating a task since we are going to change the value of {d} constantly.
     //we are using task since we are using timing constructs
@@ -10,7 +10,7 @@ module testb();
     d = ip;//This line is used to change the value of t as we instantiate the clock
     #1 $display("d= %b --> q= %b qbar= %b",d,q,qbar);//display the values for every cycle.
   endtask
-  tflipflop tff(.clk(clk), .d(d),.rst(rst),.q(q),.qbar(qbar));//creating design instance.
+  dflipflop dff(.clk(clk), .d(d),.rst(rst),.q(q),.qbar(qbar));//creating design instance.
   always #2 clk = ~clk; //negating clk value every 2ns
   initial begin
     clk = 0;rst = 0;//initiating clk values
