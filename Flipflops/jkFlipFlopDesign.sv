@@ -1,5 +1,5 @@
-module jkflipflop(input s, input r, input clk, input rst, output reg q, output reg qbar);
-  //srFlipFlop get inputs {s,r}, reset,clk Output q and q'
+module jkflipflop(input j, input k, input clk, input rst, output reg q, output reg qbar);
+  //srFlipFlop get inputs {j,k}, reset,clk Output q and q'
   always@(posedge clk)
   //Positive edge triggered flipflop
     if(!rst) q <= 0;
@@ -21,7 +21,7 @@ module jkflipflop(input s, input r, input clk, input rst, output reg q, output r
           // | 1 | 0 |        1        |        0         |
           // | 1 | 1 |        Q'       |        Q         |
 
-        #1 $display("Design output s= %b r= %b q= %b q=%b reset=%b", s, r,q,qbar,rst);
+        #1 $display("Design output j= %b k= %b q= %b q=%b reset=%b", j, k,q,qbar,rst);
       end
 
 endmodule
