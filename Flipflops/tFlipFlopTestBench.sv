@@ -4,7 +4,7 @@ module testb();
   wire q,qbar;
 //tFlipFlop get inputs t, reset,clk Output q and q'
   task valueparse(bit ip);
-    //we are creating a task since we are going to change the value of {s.r} constantly.
+    //we are creating a task since we are going to change the value of {t} constantly.
     //we are using task since we are using timing constructs
     @(posedge clk);//while the clk is at positive edge(0-to-1).
     t = ip;//This line is used to change the value of t as we instantiate the clock
@@ -15,7 +15,7 @@ module testb();
   initial begin
     clk = 0;rst = 0;//initiating clk values
     #3 rst=1;
-    //setting reset equals 1 and doing some permutation&combinations of the inout values {s,r}.
+    //setting reset equals 1 and doing some permutation&combinations of the inout values {t}.
     valueparse(1'b0);
     valueparse(1'b1);
     #5;
